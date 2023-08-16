@@ -1,3 +1,4 @@
 # Archer-Game
 ## Dependencies
-- (pygame)[pygame.org]
+
+- [pygame](pygame.org)
