@@ -6,11 +6,11 @@ class App:
     """Class for whole app"""
 
     def __init__(self):
-        self.Client = Client()
+        self.Client = Client(name="Archer Game")
         self.Server = Server()  # everyone communicates from local server
 
     def run(self):
-        """Run"""
+        self.Client.run()
 
 
 if __name__ == "__main__":

@@ -12,3 +12,16 @@ class Client:
         self.display = pygame.display.set_mode((self.width, self.height))
         self.name = name
         pygame.display.set_caption(name)
+
+    def run(self):
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            self.display.fill((0, 0, 0))
+
+            pygame.display.update()
+            self.clock.tick(self.fps)
+        pygame.quit()
