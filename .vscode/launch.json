@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python",
+            "type": "python",
+            "request": "launch",
+            "program": "src/app.py",
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
