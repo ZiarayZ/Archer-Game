@@ -1,16 +1,21 @@
 """Module for rendering everything."""
+from typing import Any
 import pygame
 
 
 class Client:
     """Client-side app"""
 
-    def __init__(self, name="Game", dim=(400, 450), fps=60):
+    fps = 60
+    dim = (400, 450)
+
+    def __init__(self):
         pygame.init()
-        (self.width, self.height), self.fps = dim, fps
         self.clock = pygame.time.Clock()
-        self.display = pygame.display.set_mode((self.width, self.height))
-        self.name = name
+        self.display = pygame.display.set_mode(self.dim)
+        self.set_name("Archer Game")
+
+    def set_name(self, name):
         pygame.display.set_caption(name)
 
     def run(self):
