@@ -19,15 +19,8 @@ class Entity(sprite.Sprite):
 
 
 class Entities(sprite.AbstractGroup):
-    def __init__(self, *sprites: Entity):
+    def __init__(self):
         sprite.AbstractGroup.__init__(self)
-        self.add(*sprites)
-
-    def add(self, *sprites: Entity):
-        for sprite in sprites:
-            if not self.has_internal(sprite):
-                self.add_internal(sprite)
-                sprite.add_internal(self)
 
     # Used so iter knows type
     def sprites(self) -> list[Entity]:
