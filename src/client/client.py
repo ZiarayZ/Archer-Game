@@ -12,9 +12,9 @@ class Client:
         pygame.init()
         self.clock = pygame.time.Clock()
         self.display = pygame.display.set_mode(self.dim)
-        self.set_name("Archer Game")
+        self.set_name("StickMario: Remastered")
 
-    def set_name(self, name):
+    def set_name(self, name: str = "Game"):
         pygame.display.set_caption(name)
 
     def run(self):
