@@ -1,3 +1,3 @@
-# Archer-Game
+# StickMario-Remastered
 ## Dependencies
 - [pygame](pygame.org)
