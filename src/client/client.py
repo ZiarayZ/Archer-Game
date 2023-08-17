@@ -1,5 +1,4 @@
-"""Module for rendering everything."""
-from typing import Any
+"""Renderer"""
 import pygame
 
 
