@@ -1,4 +1,3 @@
-"""Renderer"""
 from pygame import sprite, Surface, math
 
 

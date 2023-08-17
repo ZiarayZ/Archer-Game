@@ -1,11 +1,8 @@
-"""Renderer"""
 import pygame
 from src.entity.entity import Entities
 
 
 class Client:
-    """Client-side app"""
-
     fps = 60
     dim = (400, 450)
 

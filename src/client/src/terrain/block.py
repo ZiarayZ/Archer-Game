@@ -1,4 +1,3 @@
-"""Renderer"""
 import pygame
 
 
