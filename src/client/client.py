@@ -14,7 +14,7 @@ class Client:
         self.set_name("StickMario: Remastered")
         self.player = player.Player()
 
-        self.users = entity.Entities(self.player)
+        self.otherPlayers = entity.Entities()
         self.enemies = entity.Entities()
 
     def set_name(self, name: str = "Game"):
@@ -29,7 +29,7 @@ class Client:
 
             self.display.fill((0, 0, 0))
 
-            for entity in [*self.users, *self.enemies]:
+            for entity in [*self.otherPlayers, *self.enemies]:
                 # more to think on here
                 entity.render(self.display)
 
