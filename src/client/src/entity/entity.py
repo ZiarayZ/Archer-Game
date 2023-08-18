@@ -18,8 +18,7 @@ class Entity:
 
 
 class Entities:
-    # dummy val to identify sprite groups, and avoid infinite recursion
-    _spritegroup = True
+    _spritegroup = True  # dummy val to identify, and avoid infinite recursion
 
     def __init__(self):
         self.spritedict = {}
@@ -28,33 +27,27 @@ class Entities:
     def sprites(self) -> list[Entity]:
         return list(self.spritedict)
 
-    def add_internal(self, sprite: Entity):
-        self.spritedict[sprite] = None
-
-    def remove_internal(self, sprite: Entity):
-        lost_rect = self.spritedict[sprite]
-        if lost_rect:
-            self.lostsprites.append(lost_rect)
-        del self.spritedict[sprite]
-
-    def has_internal(self, sprite: Entity):
+    def has(self, sprite):
         return sprite in self.spritedict
+
+    def add(self, *sprites: Entity):
+        for sprite in sprites:
+            if not self.has(sprite):
+                self.spritedict[sprite] = None
+
+    def remove(self, *sprites: Entity):
+        for sprite in sprites:
+            if self.has(sprite):
+                lost_rect = self.spritedict[sprite]
+                if lost_rect:
+                    self.lostsprites.append(lost_rect)
+                del self.spritedict[sprite]
 
     def __iter__(self):
         return iter(self.sprites())
 
     def __contains__(self, sprite: Entity):
         return self.has(sprite)
-
-    def add(self, *sprites: Entity):
-        for sprite in sprites:
-            if not self.has_internal(sprite):
-                self.add_internal(sprite)
-
-    def remove(self, *sprites: Entity):
-        for sprite in sprites:
-            if self.has_internal(sprite):
-                self.remove_internal(sprite)
 
     def __bool__(self):
         return bool(self.sprites())
