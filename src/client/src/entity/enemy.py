@@ -1,6 +1,6 @@
-from entity.entity import Entity, Entities
+import src.entity.entity as entity
 
 
-class Enemy(Entity):
+class Enemy(entity.Entity):
     def __init__(self):
-        Entity.__init__((50, 50))
+        entity.Entity.__init__((50, 50))

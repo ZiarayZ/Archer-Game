@@ -1,6 +1,6 @@
 import pygame
-from src.entity.player import Player
-from src.entity.entity import Entities
+import client.src.entity.player as player
+import client.src.entity.entity as entity
 
 
 class Client:
@@ -12,10 +12,10 @@ class Client:
         self.clock = pygame.time.Clock()
         self.display = pygame.display.set_mode(self.dim)
         self.set_name("StickMario: Remastered")
-        self.player = Player()
+        self.player = player.Player()
 
-        self.users = Entities(self.player)
-        self.enemies = Entities()
+        self.users = entity.Entities(self.player)
+        self.enemies = entity.Entities()
 
     def set_name(self, name: str = "Game"):
         pygame.display.set_caption(name)
