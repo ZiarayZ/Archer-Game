@@ -1,6 +1,6 @@
-from entity.entity import Entity
+from entity.entity import Entity, Entities
 
 
 class Player(Entity):
     def __init__(self):
-        super().__init__((50, 50))
+        Entity.__init__((50, 50))
