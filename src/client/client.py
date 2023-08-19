@@ -20,6 +20,18 @@ class Client:
     def set_name(self, name: str = "Game"):
         pygame.display.set_caption(name)
 
+    def menu(self):
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            self.display.fill((255, 255, 255))
+
+            pygame.display.update()
+            self.clock.tick(self.fps)
+
     def run(self):
         running = True
         while running:
@@ -35,4 +47,6 @@ class Client:
 
             pygame.display.update()
             self.clock.tick(self.fps)
+
+    def quit(self):
         pygame.quit()

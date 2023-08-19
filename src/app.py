@@ -8,7 +8,8 @@ class App:
         self.Server = Server()  # everyone communicates from local server
 
     def run(self):
-        self.Client.run()
+        self.Client.menu()
+        self.Client.quit()
 
 
 if __name__ == "__main__":
