@@ -5,12 +5,12 @@ import client.src.entity.entity as entity
 
 class Client:
     fps = 60
-    dim = (400, 450)
+    dim = (1920, 1080)
 
     def __init__(self):
         pygame.init()
         self.clock = pygame.time.Clock()
-        self.display = pygame.display.set_mode(self.dim)
+        self.display = pygame.display.set_mode(self.dim)  # , pygame.FULLSCREEN)
         self.set_name("StickMario: Remastered")
         self.player = player.Player()
 
@@ -27,7 +27,7 @@ class Client:
                 if event.type == pygame.QUIT:
                     running = False
 
-            self.display.fill((0, 0, 0))
+            self.display.fill((255, 255, 255))
 
             for entity in [*self.otherPlayers, *self.enemies]:
                 # more to think on here
