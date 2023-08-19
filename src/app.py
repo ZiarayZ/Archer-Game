@@ -24,34 +24,38 @@ class App:
 
     def main_menu(self):
         running = True
-        while running:
+        while running == True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
+                    running = "quit"
 
             self.display.fill((255, 255, 255))
 
             pygame.display.update()
             self.clock.tick(self.fps)
+        if running == "quit":
+            pygame.quit()
 
     def pause_menu(self):
         running = True
-        while running:
+        while running == True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
+                    running = "quit"
 
             self.display.fill((255, 255, 255))
 
             pygame.display.update()
             self.clock.tick(self.fps)
+        if running == "quit":
+            pygame.quit()
 
     def game_run(self):
         running = True
-        while running:
+        while running == True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
+                    running = "quit"
 
             self.display.fill((255, 255, 255))
 
@@ -61,6 +65,8 @@ class App:
 
             pygame.display.update()
             self.clock.tick(self.fps)
+        if running == "quit":
+            pygame.quit()
 
 
 if __name__ == "__main__":
