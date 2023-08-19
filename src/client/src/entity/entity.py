@@ -2,6 +2,7 @@ import pygame
 
 
 class Entity:
+    _sprite = True  # dummy val to identify, and avoid infinite recursion
     force = 0.5
     friction = -0.12
 
